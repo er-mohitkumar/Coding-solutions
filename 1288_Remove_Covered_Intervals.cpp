@@ -5,13 +5,16 @@ public:
         int n=intervals.size(), ans=1;
         for(int i=1;i<n;i++){
             if(intervals[i][0]>=intervals[i-1][0] && intervals[i][1]<=intervals[i-1][1]){
+                cout<<" first case ";
                 cout<<intervals[i][0]<<" "<<intervals[i][1]<<endl;
                 continue;
             } else{
                 if(intervals[i][0]==intervals[i-1][0] && intervals[i][1]>=intervals[i-1][1]){
+                    cout<<" second case ";
                    cout<<intervals[i][0]<<" "<<intervals[i][1]<<endl;
                     continue;
                 }
+                cout<<" last case ";
                 cout<<intervals[i][0]<<" "<<intervals[i][1]<<endl;              
                 ans++;
             }
