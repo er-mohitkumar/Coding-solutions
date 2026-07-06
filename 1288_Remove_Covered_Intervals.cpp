@@ -15,7 +15,8 @@ public:
                     continue;
                 }
                 cout<<" last case ";
-                cout<<intervals[i][0]<<" "<<intervals[i][1]<<endl;              
+                cout<<intervals[i][0]<<" "<<intervals[i][1]<<endl; 
+                cout<<"Ans - "<<ans<<endl;             
                 ans++;
             }
         }
