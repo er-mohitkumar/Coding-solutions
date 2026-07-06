@@ -2,20 +2,22 @@ class Solution {
 public:
     int removeCoveredIntervals(vector<vector<int>>& intervals) {
         sort(intervals.begin(),intervals.end());
-        int n=intervals.size(), ans=1;
+        int n=intervals.size(), ans=1, first = intervals[0][0], second = intervals[0][1];
         for(int i=1;i<n;i++){
-            if(intervals[i][0]>=intervals[i-1][0] && intervals[i][1]<=intervals[i-1][1]){
-                cout<<" first case ";
-                cout<<intervals[i][0]<<" "<<intervals[i][1]<<endl;
+            if(intervals[i][0]>=first && intervals[i][1]<=second){
+                cout<<"First case "<<endl;
+                cout<<first<<" "<<second<<endl;
                 continue;
             } else{
-                if(intervals[i][0]==intervals[i-1][0] && intervals[i][1]>=intervals[i-1][1]){
-                    cout<<" second case ";
-                   cout<<intervals[i][0]<<" "<<intervals[i][1]<<endl;
+                if(intervals[i][0]==first && intervals[i][1]>=second){
+                    cout<<"Second case "<<endl;
+                    cout<<first<<" "<<second<<endl;
                     continue;
                 }
-                cout<<" last case ";
-                cout<<intervals[i][0]<<" "<<intervals[i][1]<<endl;       
+                first = intervals[i][0];
+                second = intervals[i][1];
+                cout<<"Last case "<<endl;
+                cout<<first<<" "<<second<<endl;       
                 ans++;
             }
         }
