@@ -8,10 +8,12 @@ public:
                 continue;
             } else{
                 if(intervals[i][0]==first && intervals[i][1]>=second){
+                    first = intervals[i][0];
+                    second = intervals[i][1];
                     continue;
                 }
                 first = intervals[i][0];
-                second = intervals[i][1];       
+                second = intervals[i][1];      
                 ans++;
             }
         }
