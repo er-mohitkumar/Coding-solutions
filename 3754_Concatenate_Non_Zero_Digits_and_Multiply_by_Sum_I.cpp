@@ -5,7 +5,6 @@ public:
         while(n){
             if(n%10 != 0){
                 x = ((n%10) * place) + x;
-                cout<<x<<endl;
                 sumX = sumX+(n%10);
                 place*=10;
             }
