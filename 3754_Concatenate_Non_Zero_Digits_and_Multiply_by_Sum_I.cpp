@@ -6,6 +6,7 @@ public:
             if(n%10 != 0){
                 x = ((n%10) * place) + (x*10);
                 sumX = sumX+(n%10);
+                place*=10;
             }
             n = n/10;
         }
