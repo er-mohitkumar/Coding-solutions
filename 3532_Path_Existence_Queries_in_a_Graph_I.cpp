@@ -5,6 +5,7 @@ public:
         mp[0] = 0;
         for(int i=1;i<nums.size();i++){
             if(abs(nums[i]-nums[i-1])<=maxDiff){
+                cout<<abs(nums[i]-nums[i-1])<<" ";
                 mp[i-1] = i;
             }
         }
