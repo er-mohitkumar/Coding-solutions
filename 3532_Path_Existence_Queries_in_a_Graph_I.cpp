@@ -9,13 +9,14 @@ public:
                 mp[i-1] = i;
             }
         }
-
+        cout<<endl;
         vector<bool> ans(queries.size(), true);
 
         for(int i=0;i<queries.size();i++){
             int a = queries[i][0];
             while(a<=queries[i][1]){
                 if(mp.find(a)==mp.end()){
+                    cout<<a<<" ";
                     ans[i] = false;
                 }
                 a++;
