@@ -23,6 +23,9 @@ public:
                     if(mp[a]>queries[i][1]){
                         ans[i]=false;
                     }
+                } else {
+                    ans[i]=false;
+                    break;
                 }
                 a++;
             }
