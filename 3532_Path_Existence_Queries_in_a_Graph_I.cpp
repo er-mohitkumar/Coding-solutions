@@ -5,6 +5,7 @@ public:
         for(int i=1;i<nums.size();i++){
             if(abs(nums[i]-nums[i-1])<=maxDiff){
                 mp[i-1] = i;
+                mp[i] = i-1;
             }
         }
         vector<bool> ans(queries.size(), true);
@@ -13,19 +14,34 @@ public:
             if(queries[i][0]==queries[i][1]){
                 ans[i]=true;
                 continue;
-            }
-            int a = queries[i][0];
-            while(a<queries[i][1]){
-                if(mp.find(a)!=mp.end()){
-                    if(mp[a]>queries[i][1]){
+            } else if(queries[i][0]<queries[i][1]){
+                int a = queries[i][0];
+                while(a<queries[i][1]){
+                    if(mp.find(a)!=mp.end()){
+                        if(mp[a]>queries[i][1]){
+                            ans[i]=false;
+                            break;
+                        }
+                    } else {
                         ans[i]=false;
                         break;
                     }
-                } else {
-                    ans[i]=false;
-                    break;
+                    a++;
+                } 
+            } else {
+                int a = queries[i][0];
+                while(a>queries[i][1]){
+                    if(mp.find(a)!=mp.end()){
+                        if(mp[a]<queries[i][0]){
+                            ans[i]=false;
+                            break;
+                        }
+                    } else {
+                        ans[i]=false;
+                        break;
+                    }
+                    a--;
                 }
-                a++;
             }
         }
         return ans;
