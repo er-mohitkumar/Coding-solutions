@@ -10,6 +10,10 @@ public:
 
         vector<bool> ans(queries.size(), true);
 
+        for(int i=0;i<ans.size();i++){
+            cout<<ans[i]<<" ";
+        }
+
         for(int i=0;i<queries.size();i++){
             int a = queries[i][0];
             while(a<=queries[i][1]){
