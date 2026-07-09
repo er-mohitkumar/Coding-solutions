@@ -17,11 +17,12 @@ public:
                 continue;
             }
             int a = queries[i][0];
-            while(a<=queries[i][1]){
+            while(a<queries[i][1]){
                 if(mp.find(a)!=mp.end()){
                     cout<<a<<" ";
                     if(mp[a]>queries[i][1]){
                         ans[i]=false;
+                        break;
                     }
                 } else {
                     ans[i]=false;
