@@ -4,11 +4,9 @@ public:
         unordered_map<int,int>mp;
         for(int i=1;i<nums.size();i++){
             if(abs(nums[i]-nums[i-1])<=maxDiff){
-                cout<<abs(nums[i]-nums[i-1])<<" ";
                 mp[i-1] = i;
             }
         }
-        cout<<endl;
         vector<bool> ans(queries.size(), true);
 
         for(int i=0;i<queries.size();i++){
@@ -19,7 +17,6 @@ public:
             int a = queries[i][0];
             while(a<queries[i][1]){
                 if(mp.find(a)!=mp.end()){
-                    cout<<a<<" ";
                     if(mp[a]>queries[i][1]){
                         ans[i]=false;
                         break;
