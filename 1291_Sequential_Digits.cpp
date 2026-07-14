@@ -9,9 +9,16 @@ public:
                 place = place * 10;
             }
         }
-
         cout<<zeroth<<endl;
         cout<<place<<endl;
+        int first_no = zeroth, next=1;
+        while(place){
+            place = place/10;
+            ++zeroth;
+            first_no = (first_no * place) + zeroth;
+            next = (next * 10) + 1;
+        }
+        cout<<first_no<<" "<<next<<endl;
         return {0};
     }
 };
