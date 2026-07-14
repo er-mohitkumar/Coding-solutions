@@ -40,6 +40,7 @@ public:
             if(first_no%10 == 9){
                 ans.push_back(first_no);
                 first_no+=1;
+                cout<<first_no<<endl;
                 place = 1;
                 zeroth = 0;
                 find_next(first_no, place, zeroth);
