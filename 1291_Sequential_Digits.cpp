@@ -42,7 +42,7 @@ public:
                 first_no+=1;
                 place = 1;
                 zeroth = 0;
-                find_next(first_no, 1, 0);
+                find_next(first_no, place, zeroth);
                 first_no = zeroth;
                 next=1;
                 find_first(place, first_no, next, zeroth);
