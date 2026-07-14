@@ -13,7 +13,7 @@ public:
         cout<<place<<endl;
         int first_no = zeroth, next=1;
         while(place){
-            place = place%10;
+            place = place/10;
             ++zeroth;
             first_no = (first_no * 10) + zeroth;
             next = (next * 10) + 1;
