@@ -1,6 +1,7 @@
 class Solution {
 public:
     vector<int> sequentialDigits(int low, int high) {
+        vector<int>ans;
         int n = low, place = 1, zeroth = 0;
         while(n){
             zeroth = n%10;
@@ -9,8 +10,6 @@ public:
                 place = place * 10;
             }
         }
-        cout<<zeroth<<endl;
-        cout<<place<<endl;
         int first_no = zeroth, next=1;
         while(place!=1){
             place = place/10;
@@ -18,7 +17,10 @@ public:
             first_no = (first_no * 10) + zeroth;
             next = (next * 10) + 1;
         }
-        cout<<first_no<<" "<<next<<endl;
-        return {0};
+        while(first_no<high){
+            ans.push_back(first_no);
+            first_no += next;
+        }
+        return ans;
     }
 };
