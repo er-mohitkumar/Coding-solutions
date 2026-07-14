@@ -5,7 +5,9 @@ public:
         while(n){
             zeroth = n%10;
             n = n/10;
-            place = place * 10;
+            if(n){
+                place = place * 10;
+            }
         }
         cout<<zeroth<<endl;
         cout<<place<<endl;
@@ -13,7 +15,7 @@ public:
         while(place){
             place = place%10;
             ++zeroth;
-            first_no = (first_no * 10) + (zeroth * place);
+            first_no = (first_no * 10) + zeroth;
             next = (next * 10) + 1;
         }
         cout<<first_no<<" "<<next<<endl;
