@@ -12,7 +12,7 @@ public:
         cout<<zeroth<<endl;
         cout<<place<<endl;
         int first_no = zeroth, next=1;
-        while(place){
+        while(place!=1){
             place = place/10;
             ++zeroth;
             first_no = (first_no * 10) + zeroth;
