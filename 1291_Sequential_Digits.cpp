@@ -36,7 +36,7 @@ public:
         find_first(place, first_no, next, zeroth);
         while(first_no<high){
             ans.push_back(first_no);
-            first_no += next;
+            first_no += 1;
             if(first_no%10 == 9){
                 ans.push_back(first_no);
                 first_no+=next;
