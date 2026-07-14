@@ -38,6 +38,7 @@ public:
             ans.push_back(first_no);
             first_no += next;
             if(first_no%10 == 9){
+                ans.push_back(first_no);
                 first_no+=next;
                 place = 1;
                 zeroth = 0;
