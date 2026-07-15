@@ -25,7 +25,6 @@ public:
                     ans.push_back(first_no);
                 first_no = 1;
                 digits *= 10;
-                cout<<digits<<endl;
                 if(digits == 1000000000){
                     break;
                 }
@@ -36,7 +35,6 @@ public:
                     place = place/10;
                     ++zeroth;
                     first_no = (first_no * 10) + zeroth;
-                    // cout<<first_no<<endl;
                     next = (next * 10) + 1;
                 }
             } else {
