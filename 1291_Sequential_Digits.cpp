@@ -31,7 +31,7 @@ public:
                 place = digits;
                 next = 1;
                 zeroth = 1;
-                while(place){
+                while(place!=1){
                     place = place/10;
                     ++zeroth;
                     first_no = (first_no * 10) + zeroth;
