@@ -31,12 +31,14 @@ public:
                 place = digits * 10;
                 next = 1;
                 zeroth = 1;
-                while(place!=1){
+                while(place){
                     place = place/10;
                     ++zeroth;
                     first_no = (first_no * 10) + zeroth;
                     next = (next * 10) + 1;
                 }
+                if(first_no >= low && first_no <= high)
+                    ans.push_back(first_no);
             }
         }
         return ans;
