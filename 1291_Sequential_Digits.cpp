@@ -7,9 +7,10 @@ public:
         while(n){
             zeroth = n%10;
             n = n/10;
-            if(n){
-                place = place * 10;
+            if(n==low){
+                continue;
             }
+            place = place * 10;
         }
         int first_no = zeroth, next=1, digits = place;
         while(place!=1){
