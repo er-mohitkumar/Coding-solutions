@@ -29,7 +29,7 @@ public:
                 first_no = 1;
                 digits *= 10;
                 cout<<digits<<endl;
-                if(digits == 100000000){
+                if(digits == 1000000000){
                     break;
                 }
                 place = digits;
