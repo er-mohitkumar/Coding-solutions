@@ -20,11 +20,13 @@ public:
             next = (next * 10) + 1;
         }
         while(first_no<high){
+            if (first_no >= low)
             ans.push_back(first_no);
             first_no += next;
             if(first_no%10 ==9){
                 ans.push_back(first_no);
                 first_no = 1;
+                digits *= 10;
                 place = digits * 10;
                 next = 1;
                 zeroth = 1;
@@ -34,7 +36,6 @@ public:
                     first_no = (first_no * 10) + zeroth;
                     next = (next * 10) + 1;
                 }
-                digits = place;
             }
         }
         return ans;
