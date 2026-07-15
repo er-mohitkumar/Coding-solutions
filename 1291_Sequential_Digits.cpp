@@ -35,6 +35,7 @@ public:
                     place = place/10;
                     ++zeroth;
                     first_no = (first_no * 10) + zeroth;
+                    cout<<first_no<<endl;
                     next = (next * 10) + 1;
                 }
                 if(first_no >= low && first_no <= high)
