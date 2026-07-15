@@ -7,7 +7,7 @@ public:
         while(n){
             zeroth = n%10;
             n = n/10;
-            if(n==low){
+            if(n==0){
                 continue;
             }
             place = place * 10;
