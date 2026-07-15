@@ -30,7 +30,7 @@ public:
                 place = digits * 10;
                 next = 1;
                 zeroth = 1;
-                while(place!=1){
+                while(place){
                     place = place/10;
                     ++zeroth;
                     first_no = (first_no * 10) + zeroth;
