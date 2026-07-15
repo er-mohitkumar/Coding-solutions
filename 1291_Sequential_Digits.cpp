@@ -3,16 +3,15 @@ public:
 
     vector<int> sequentialDigits(int low, int high) {
         vector<int>ans;
-        int n = low, place = 1, zeroth = 0;
+        int n = low, place = 1, zeroth = 1;
         while(n){
-            zeroth = n%10;
             n = n/10;
             if(n==0){
                 continue;
             }
             place = place * 10;
         }
-        int first_no = zeroth, next=1, digits = place;
+        int first_no = 1, next=1, digits = place;
         while(place!=1){
             place = place/10;
             ++zeroth;
