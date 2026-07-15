@@ -24,7 +24,8 @@ public:
             ans.push_back(first_no);
             first_no += next;
             if(first_no%10 ==9){
-                ans.push_back(first_no);
+                if(first_no >= low && first_no <= high)
+                    ans.push_back(first_no);
                 first_no = 1;
                 digits *= 10;
                 place = digits * 10;
