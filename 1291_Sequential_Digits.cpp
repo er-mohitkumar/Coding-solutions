@@ -20,9 +20,6 @@ public:
             next = (next * 10) + 1;
         }
         while(first_no<high){
-            if (first_no >= low)
-            ans.push_back(first_no);
-            first_no += next;
             if(first_no%10 ==9){
                 if(first_no >= low && first_no <= high)
                     ans.push_back(first_no);
@@ -42,6 +39,10 @@ public:
                     // cout<<first_no<<endl;
                     next = (next * 10) + 1;
                 }
+            } else {
+                if (first_no >= low)
+                    ans.push_back(first_no);
+                first_no += next;
             }
         }
         return ans;
