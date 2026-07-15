@@ -28,6 +28,9 @@ public:
                     ans.push_back(first_no);
                 first_no = 1;
                 digits *= 10;
+                if(digits == 1000000000){
+                    break;
+                }
                 place = digits;
                 next = 1;
                 zeroth = 1;
