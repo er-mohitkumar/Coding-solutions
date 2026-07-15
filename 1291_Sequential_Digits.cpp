@@ -28,7 +28,7 @@ public:
                     ans.push_back(first_no);
                 first_no = 1;
                 digits *= 10;
-                place = digits * 10;
+                place = digits;
                 next = 1;
                 zeroth = 1;
                 while(place){
