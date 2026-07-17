@@ -16,8 +16,8 @@ public:
     }
 
     int gcdOfOddEvenSums(int n) {
-        int odd = 0, even = 0, i = 0;
-        while(i<n){
+        int odd = 0, even = 0, i = 1;
+        while(i<=n){
             even += (i*2);
             odd += even + 1;
             i++;
