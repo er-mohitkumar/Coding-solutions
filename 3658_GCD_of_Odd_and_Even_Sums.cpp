@@ -16,10 +16,10 @@ public:
     }
 
     int gcdOfOddEvenSums(int n) {
-        int odd = 1, even = 2, i = 0;
+        int odd = 0, even = 0, i = 0;
         while(i<n){
-            odd = (odd + (i*2)+ 1);
-            even = (even+(i*2));
+            even += (i*2);
+            odd += even + 1;
             i++;
         }
         cout<<odd<<" "<<even<<endl;
