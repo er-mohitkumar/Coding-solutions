@@ -21,6 +21,7 @@ public:
             odd+=2;
             even+=2;
         }
+        cout<<odd<<" "<<even<<endl;
         return gcd(odd,even);
     }
 };
