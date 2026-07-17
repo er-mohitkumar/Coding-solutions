@@ -19,7 +19,7 @@ public:
         int odd = 0, even = 0, i = 1;
         while(i<=n){
             even += (i*2);
-            odd += even + 1;
+            odd += (i*2) + 1;
             i++;
             cout<<odd<<" "<<even<<endl;
         }
