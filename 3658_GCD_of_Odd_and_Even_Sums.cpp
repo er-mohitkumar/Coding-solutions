@@ -17,9 +17,10 @@ public:
 
     int gcdOfOddEvenSums(int n) {
         int odd = 1, even = 2;
-        while(n--){
+        while(n>=0){
             odd = (odd+2);
             even = (even+2);
+            n--;
         }
         cout<<odd<<" "<<even<<endl;
         return gcd(odd,even);
