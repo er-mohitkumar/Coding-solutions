@@ -21,7 +21,6 @@ public:
             even += (i*2);
             odd += (i*2) + 1;
             i++;
-            cout<<odd<<" "<<even<<endl;
         }
         return gcd(odd,even);
     }
