@@ -3,6 +3,7 @@ public:
     int maxProduct(int n) {
         int a = 0, b = 0, x = n;
         while(x--){
+            cout<<x%10<<endl;
             if(x==n){
                 a = x%10;
             } else {
