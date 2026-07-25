@@ -9,6 +9,8 @@ public:
                 if(a<x%10){
                     b = a;
                     a = x%10;
+                } else if(b<x%10){
+                    b = x%10;
                 }
             }
             x = x/10;
