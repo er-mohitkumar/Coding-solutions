@@ -1,20 +1,20 @@
 class Solution {
 public:
-    int maxProduct(int n) {
-        int a = 0, b = 0, x = n;
-        while(x){
-            if(x==n){
-                a = x%10;
-            } else {
-                if(a<x%10){
-                    b = a;
-                    a = x%10;
-                } else if(b<x%10){
-                    b = x%10;
-                }
+    int findGCD(vector<int>& nums) {
+        int a = INT_MIN, b = INT_MAX;
+        for(int i:nums){
+            if(a<i){
+                a = i;
             }
-            x = x/10;
+            if(i<b){
+                b = i;
+            }
         }
-        return a*b;
+        for(int i=2;i<=b;i++){
+            if(a%i==0 && b%i==0){
+                return i;
+            }
+        }
+        return 1;
     }
 };
