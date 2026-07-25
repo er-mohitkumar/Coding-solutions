@@ -1,20 +1,25 @@
 class Solution {
 public:
-    int findGCD(vector<int>& nums) {
-        int a = INT_MIN, b = INT_MAX;
-        for(int i:nums){
-            if(a<i){
-                a = i;
+    vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) {
+        int r = grid.size(), c = grid[0].size();
+        while(k--){
+            vector<int>lastCol;
+            for(int i=0;i<r;i++){
+                lastCol.push_back(grid[i][c-1]);
             }
-            if(i<b){
-                b = i;
+
+            for(int i=0;i<r;i++){
+                for(int j=c-1;j>0;j--){
+                    grid[i][j]=grid[i][j-1];
+                }
+            }
+            grid[0][0] = lastCol[lastCol.size()-1];
+            for(int i=1;i<r;i++){
+                for(int j=0;j<1;j++){
+                    grid[i][j] = lastCol[i-1];
+                }
             }
         }
-        while (b != 0) {
-            int rem = a % b;
-            a = b;
-            b = rem;
-        }
-        return a;
+        return grid;
     }
 };
