@@ -14,7 +14,7 @@ public:
                 }
             }
             x = x/10;
-            
+            cout<<a<<" "<<b<<endl;
         }
         return a*b;
     }
