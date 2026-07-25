@@ -4,6 +4,7 @@ public:
         int a = 0, b = 0, x = n;
         while(x--){
             cout<<x%10<<endl;
+            cout<<n%10<<endl;
             if(x==n){
                 a = x%10;
             } else {
