@@ -29,7 +29,7 @@ public:
             ans+=s[j];
             j+=2;
         }
-        cout<<ans<<endl;
+        
         string Ans = ans;
         if(n%2!=0){
             Ans += s[n-1];
