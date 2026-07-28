@@ -3,6 +3,7 @@ public:
     string smallestPalindrome(string s) {
         sort(s.begin(), s.end());
         string ans = "";
+        cout<<s<<endl;
         int start = 0, st = 0, end = s.size()-1, ed = s.size()-1;
         while(start<=end){
             cout<<s[start]<<" "<<s[end]<<endl;
