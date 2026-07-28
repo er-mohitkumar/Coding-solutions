@@ -5,6 +5,8 @@ public:
         sort(s.begin(), s.end());
         string ans = "";
         int j=s.size()-1;
+        cout<<"j - "<<j<<endl;
+
         if(s.size()/2==0){
             if(s[j]!=s[j-1]){
                 return ans+=s[j];
