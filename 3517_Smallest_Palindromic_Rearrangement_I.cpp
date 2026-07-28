@@ -14,13 +14,13 @@ public:
         } else {
             j--;
         }
-        cout<<"j - "<<j<<endl;
         while(j>0){
             if(s[j]!=s[j-1]){
                 break;
             } 
             j -= 2;
         }
+        cout<<"j - "<<j<<endl;
         while(j<s.size()){
             ans+=s[j];
             j++;
