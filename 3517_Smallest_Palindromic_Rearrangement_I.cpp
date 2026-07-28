@@ -5,6 +5,7 @@ public:
         string ans = "";
         int start = 0, st = 0, end = s.size()-1, ed = s.size()-1;
         while(start<=end){
+            cout<<s[start]<<" "<<s[end]<<endl;
             if(s[start]==s[end]){
                 break;
             } else if(s[start]<s[end]){
