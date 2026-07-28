@@ -11,6 +11,8 @@ public:
             } else {
                 j -= 2;
             }
+        } else {
+            j--;
         }
         while(j>0){
             if(s[j]!=s[j-1]){
