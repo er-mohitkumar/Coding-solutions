@@ -21,9 +21,10 @@ public:
             j -= 2;
         }
         cout<<"j - "<<j<<endl;
+        if(j<0) j=0;
         while(j<s.size()){
             ans+=s[j];
-            j++;
+            j+=2;
         }
         cout<<ans<<endl;
         // string Ans = ans;
