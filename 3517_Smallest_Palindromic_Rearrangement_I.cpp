@@ -8,6 +8,7 @@ public:
         cout<<"j - "<<j<<endl;
 
         if(s.size()/2==0){
+            cout<<"Ev";
             if(s[j]!=s[j-1]){
                 return ans+=s[j];
             } else {
