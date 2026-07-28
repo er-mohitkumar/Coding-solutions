@@ -14,23 +14,23 @@ public:
         } else {
             j--;
         }
-        cout<<"j - "<<j<<endl;
+
         while(j>0){
             if(s[j]!=s[j-1]){
                 break;
             } 
             j -= 2;
         }
-        cout<<"j - "<<j<<endl;
+
         if(j<0) j=0;
         while(j<s.size()){
             ans+=s[j];
             j+=2;
         }
-        cout<<ans<<endl;
-        // string Ans = ans;
-        // reverse(ans.begin(),ans.end());
-        // ans = Ans + ans;
+
+        string Ans = ans;
+        reverse(ans.begin(),ans.end());
+        ans = Ans + ans;
         return ans;
     }
 };
