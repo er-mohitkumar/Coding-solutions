@@ -27,8 +27,11 @@ public:
             ans+=s[j];
             j+=2;
         }
-        cout<<ans<<endl;
+        
         string Ans = ans;
+        if(s.size()%2!=0){
+            Ans += s[s.size()-1];
+        }
         reverse(ans.begin(),ans.end());
         ans = Ans + ans;
         return ans;
