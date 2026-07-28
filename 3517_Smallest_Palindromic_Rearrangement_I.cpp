@@ -1,24 +1,31 @@
 class Solution {
 public:
     string smallestPalindrome(string s) {
+        if(s.size()==1) return s;
         sort(s.begin(), s.end());
         string ans = "";
-        cout<<s<<endl;
-        int start = 0, st = 0, end = s.size()-1, ed = s.size()-1;
-        while(start<=end){
-            cout<<s[start]<<" "<<s[end]<<endl;
-            if(s[start]==s[end]){
-                break;
-            } else if(s[start]<s[end]){
-                start++;
-            } else{
-                end--;
+        int j=s.size()-1;
+        if(s.size()/2==0){
+            if(s[j]!=s[j-1]){
+                return ans+=s[j];
+            } else {
+                j -= 2;
             }
         }
-        while(start<=end){
-            ans += s[start];
-            start++;
+        while(j>0){
+            if(s[j]!=s[j-1]){
+                break;
+            } 
+            j -= 2;
         }
+        while(j<s.size()){
+            ans+=s[j];
+            j++;
+        }
+        cout<<ans<<endl;
+        // string Ans = ans;
+        // reverse(ans.begin(),ans.end());
+        // ans = Ans + ans;
         return ans;
     }
 };
