@@ -25,8 +25,8 @@ public:
             return a>=b?dp[i][j]=1:dp[i][j]=0;
         }
         aliceTurn = !aliceTurn;
-        dp[i+1][j] = aliceWins(piles, i, j-1, a += piles[i], b, aliceTurn, dp);
-        dp[i][j-1] = aliceWins(piles, i+1, j, a, b += piles[j], aliceTurn, dp);
+        dp[i+1][j] = aliceWins(piles, i+1, j, a += piles[i], b, aliceTurn, dp);
+        dp[i][j-1] = aliceWins(piles, i, j-1, a, b += piles[j], aliceTurn, dp);
         return dp[i][j];
     }
 
