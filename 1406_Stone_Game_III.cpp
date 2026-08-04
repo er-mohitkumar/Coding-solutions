@@ -12,10 +12,12 @@ public:
             return dp[i][j];
 
         int first = piles[i] - aliceWins(piles, i+1, j, dp);
+
         int sec = piles[i+1];
         piles[i+1]=piles[i];
+
         int second = sec - aliceWins(piles, i+1, j, dp);
-        if(i+3<=j){
+        if(i+2<=j){
             int trd = piles[i+2];
             piles[i+2]=piles[i+1];
             piles[i+1]=piles[i];
