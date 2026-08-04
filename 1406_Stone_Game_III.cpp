@@ -12,15 +12,17 @@ public:
             return dp[i][j];
 
         int first = piles[i] - aliceWins(piles, i+1, j, dp);
-        if(i+2<=j){
-            int second = piles[i+1] - aliceWins(piles, i+2, j, dp);
-            if(i+3<=j){
-                int third = piles[i+2] - aliceWins(piles, i+3, j, dp);
-                return dp[i][j] = max(max(first, second), third);
-            }
-            return dp[i][j] = max(first, second);
+        int sec = piles[i+1];
+        piles[i+1]=piles[i];
+        int second = sec - aliceWins(piles, i+1, j, dp);
+        if(i+3<=j){
+            int trd = piles[i+2];
+            piles[i+2]=piles[i+1];
+            piles[i+1]=piles[i];
+            int third = trd - aliceWins(piles, i+1, j, dp);
+            return dp[i][j] = max(max(first, second), third);
         }
-        return dp[i][j] = first;
+        return dp[i][j] = max(first, second);
     }
 
     string stoneGameIII(vector<int>& stoneValue) {
