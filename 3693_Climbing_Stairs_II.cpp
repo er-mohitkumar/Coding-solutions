@@ -1,30 +1,23 @@
 class Solution {
 public:
     int minCost(int n, int i, vector<int>& costs, vector<int>& dp){
-        if(i>=n-1){
+        if(i==n){
             return 0;
         }
-        if(dp[i]!=INT_MAX){
+        if(dp[i]!=-1){
             return dp[i];
         }
-        int ans = INT_MAX, j=i+1;
-        ans = min(ans, costs[j]+((j-i)*(j-i)) + minCost(n,i+1,costs,dp));
-        cout<<ans<<" ";
-        j=i+1;
+        int ans = costs[i]+ 1 + minCost(n,i+1,costs,dp);
         if(i+1<n){
-            ans = min(ans, costs[j]+((j-i)*(j-i)) + minCost(n,i+2,costs,dp));
-            cout<<ans<<" ";
+            ans = min(ans, costs[i+1]+ 2 + minCost(n,i+2,costs,dp));
         }
-        j=i+2;
         if(i+2<n){
-            ans = min(ans, costs[j]+((j-i)*(j-i)) + minCost(n,i+3,costs,dp));
-            cout<<ans<<" ";
+            ans = min(ans, costs[i+2]+ 3 + minCost(n,i+3,costs,dp));
         }
-        cout<<endl;
         return dp[i]=ans;
     }
     int climbStairs(int n, vector<int>& costs) {
-        vector<int>dp(n,INT_MAX);
+        vector<int>dp(n,-1);
         return minCost(n, 0, costs, dp);
     }
 };
