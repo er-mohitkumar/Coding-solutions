@@ -25,6 +25,7 @@ public:
             int third = trd - aliceWins(piles, i+1, j, dp);
             return dp[i][j] = max(max(first, second), third);
         }
+        cout<<endl;
         return dp[i][j] = max(first, second);
     }
 
