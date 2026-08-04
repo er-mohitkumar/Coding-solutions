@@ -1,32 +1,30 @@
 class Solution {
 public:
 
-    int aliceWins(vector<int>&piles, int i, int j, vector<vector<int>>&dp){
+    int aliceWins(vector<int>&piles, int i, int j, vector<int>&dp){
         if (i > j)
             return 0;
 
-        if (i == j)
-            return piles[i];
-
-        if(dp[i][j] != INT_MIN)
-            return dp[i][j];
+        if(dp[i] != INT_MIN)
+            return dp[i];
         
+        int first = INT_MIN;
         int temp = piles[i];
-        int first = temp - aliceWins(piles, i+1, j, dp);
-        temp += piles[i+1];
-        int second = temp - aliceWins(piles, i+2, j, dp);
+        first = max(first, temp - aliceWins(piles, i+1, j, dp));
+        if(i+1<=j){
+            temp += piles[i+1];
+            first = max(first, temp - aliceWins(piles, i+2, j, dp));
+        }
         if(i+2<=j){
             temp+=piles[i+2];
-            int third = temp - aliceWins(piles, i+3, j, dp);
-            return dp[i][j] = max(max(first, second), third);
+            first = max(first, temp - aliceWins(piles, i+3, j, dp));
         }
-        return dp[i][j] = max(first, second);
+        return dp[i] = first;
     }
 
     string stoneGameIII(vector<int>& stoneValue) {
         int n = stoneValue.size();
-        if(n<=3) return "Alice";
-        vector<vector<int>> dp(n, vector<int>(n, INT_MIN));
+        vector<int> dp(n, INT_MIN);
         int ans = aliceWins(stoneValue, 0, n-1, dp);
         if(ans>0){
             return "Alice";
