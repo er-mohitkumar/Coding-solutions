@@ -10,21 +10,14 @@ public:
 
         if(dp[i][j] != INT_MIN)
             return dp[i][j];
-
-        int first = piles[i] - aliceWins(piles, i+1, j, dp);
-        int old1 = piles[i+1];
-        int sec = piles[i+1];
-        piles[i+1]=piles[i];
-
-        int second = sec - aliceWins(piles, i+1, j, dp);
-        piles[i+1] = old1; 
+        
+        int temp = piles[i];
+        int first = temp - aliceWins(piles, i+1, j, dp);
+        temp += piles[i+1];
+        int second = temp - aliceWins(piles, i+1, j, dp);
         if(i+2<=j){
-            int old2 = piles[i+2];
-            int trd = piles[i+2];
-            piles[i+2] = piles[i+1];
-            piles[i+1] = piles[i];
-            int third = trd - aliceWins(piles, i+1, j, dp);
-            piles[i+2] = old2;
+            temp+=piles[i+2];
+            int third = temp - aliceWins(piles, i+1, j, dp);
             return dp[i][j] = max(max(first, second), third);
         }
         return dp[i][j] = max(first, second);
