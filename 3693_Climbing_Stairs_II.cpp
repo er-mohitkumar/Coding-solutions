@@ -9,10 +9,10 @@ public:
         }
         int ans = costs[i]+ 1 + minCost(n,i+1,costs,dp);
         if(i+1<n){
-            ans = min(ans, costs[i+1]+ 2 + minCost(n,i+2,costs,dp));
+            ans = min(ans, costs[i+1]+ 4 + minCost(n,i+2,costs,dp));
         }
         if(i+2<n){
-            ans = min(ans, costs[i+2]+ 3 + minCost(n,i+3,costs,dp));
+            ans = min(ans, costs[i+2]+ 9 + minCost(n,i+3,costs,dp));
         }
         return dp[i]=ans;
     }
