@@ -22,7 +22,7 @@ public:
                     b+=piles[i];
                 }
             }
-            return a>=b?dp[i][j]=1:dp[i][j]=0;
+            return dp[i][j]=a-b;
         }
 
         if(aliceTurn){
@@ -31,9 +31,9 @@ public:
             b+=piles[i];
         }
         aliceTurn = !aliceTurn;
-        dp[i+1][j] = aliceWins(piles, i+1, j, a, b, aliceTurn, dp);
-        dp[i][j-1] = aliceWins(piles, i, j-1, a, b, aliceTurn, dp);
-        return dp[i][j];
+        int r = aliceWins(piles, i+1, j, a, b, aliceTurn, dp);
+        int l = aliceWins(piles, i, j-1, a, b, aliceTurn, dp);
+        return dp[i][j]=r-l;
     }
 
     bool predictTheWinner(vector<int>& nums) {
