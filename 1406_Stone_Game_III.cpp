@@ -11,17 +11,18 @@ public:
         if(dp[i][j] != INT_MIN)
             return dp[i][j];
 
-        int first = piles[i] + aliceWins(piles, i+1, j, dp);
+        int first = piles[i] - aliceWins(piles, i+1, j, dp);
 
         int sec = piles[i+1];
         piles[i+1]=piles[i];
-
-        int second = sec + aliceWins(piles, i+1, j, dp);
+        cout<<piles[i]<<" "<<piles[i+1]<<" ";
+        int second = sec - aliceWins(piles, i+1, j, dp);
         if(i+2<=j){
+            cout<<piles[i+2]<<endl;
             int trd = piles[i+2];
             piles[i+2]=piles[i+1];
             piles[i+1]=piles[i];
-            int third = trd + aliceWins(piles, i+1, j, dp);
+            int third = trd - aliceWins(piles, i+1, j, dp);
             return dp[i][j] = max(max(first, second), third);
         }
         return dp[i][j] = max(first, second);
