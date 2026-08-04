@@ -1,12 +1,12 @@
 class Solution {
 public:
 
-    int aliceWins(vector<int>&piles, int i, int j, vector<int>&dp){
+    int aliceWins(vector<int>&piles, int i, int j, vector<vector<int>>&dp){
         if (i > j)
             return 0;
 
-        if(dp[i] != INT_MIN)
-            return dp[i];
+        if(dp[i][j] != INT_MIN)
+            return dp[i][j];
         
         int first = INT_MIN;
         int temp = piles[i];
@@ -19,12 +19,12 @@ public:
             temp+=piles[i+2];
             first = max(first, temp - aliceWins(piles, i+3, j, dp));
         }
-        return dp[i] = first;
+        return dp[i][j] = first;
     }
 
     string stoneGameIII(vector<int>& stoneValue) {
         int n = stoneValue.size();
-        vector<int> dp(n, INT_MIN);
+        vector<vector<int>> dp(n, vector<int>(n, INT_MIN));
         int ans = aliceWins(stoneValue, 0, n-1, dp);
         if(ans>0){
             return "Alice";
