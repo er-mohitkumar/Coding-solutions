@@ -3,7 +3,7 @@ public:
     int aliceWins(vector<int>&piles, int i, int j, int a, int b, bool aliceTurn, vector<vector<int>>&dp){
         if(i==j){
             if(aliceTurn){
-                a+=piles[j];
+                a+=piles[i];
             } else {
                 b+=piles[i];
             }
@@ -15,10 +15,19 @@ public:
         }
 
         if(aliceTurn){
-            a+=piles[j];
+            if(piles[i]>=piles[j]){
+                a+=piles[i];
+            } else {
+                a+=piles[j];
+            }
         } else {
-            b+=piles[i];
+            if(piles[i]>=piles[j]){
+                b+=piles[i];
+            } else {
+                b+=piles[j];
+            }
         }
+
         aliceTurn = !aliceTurn;
         int l = aliceWins(piles, i+1, j, a, b, aliceTurn, dp);
         int r = aliceWins(piles, i, j-1, a, b, aliceTurn, dp);
@@ -28,6 +37,6 @@ public:
     bool predictTheWinner(vector<int>& nums) {
         int n = nums.size();
         vector<vector<int>> dp(n, vector<int>(n, 0));
-        return aliceWins(nums, 0, n-1, 0, 0, true, dp)>0?true:false;
+        return aliceWins(nums, 0, n-1, 0, 0, true, dp)>=0?true:false;
     }
 };
