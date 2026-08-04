@@ -24,9 +24,15 @@ public:
             }
             return a>=b?dp[i][j]=1:dp[i][j]=0;
         }
+
+        if(aliceTurn){
+            a+=piles[j];
+        } else {
+            b+=piles[i];
+        }
         aliceTurn = !aliceTurn;
-        dp[i+1][j] = aliceWins(piles, i+1, j, a += piles[i], b, aliceTurn, dp);
-        dp[i][j-1] = aliceWins(piles, i, j-1, a, b += piles[j], aliceTurn, dp);
+        dp[i+1][j] = aliceWins(piles, i+1, j, a, b, aliceTurn, dp);
+        dp[i][j-1] = aliceWins(piles, i, j-1, a, b, aliceTurn, dp);
         return dp[i][j];
     }
 
