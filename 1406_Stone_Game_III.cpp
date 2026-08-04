@@ -14,10 +14,10 @@ public:
         int temp = piles[i];
         int first = temp - aliceWins(piles, i+1, j, dp);
         temp += piles[i+1];
-        int second = temp - aliceWins(piles, i+1, j, dp);
+        int second = temp - aliceWins(piles, i+2, j, dp);
         if(i+2<=j){
             temp+=piles[i+2];
-            int third = temp - aliceWins(piles, i+1, j, dp);
+            int third = temp - aliceWins(piles, i+3, j, dp);
             return dp[i][j] = max(max(first, second), third);
         }
         return dp[i][j] = max(first, second);
