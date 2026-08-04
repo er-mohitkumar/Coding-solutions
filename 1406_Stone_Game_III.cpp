@@ -10,16 +10,16 @@ public:
 
         if(dp[i][j] != INT_MIN)
             return dp[i][j];
-
+        cout<<piles[i]<<" ";
         int first = piles[i] - aliceWins(piles, i+1, j, dp);
 
         int sec = piles[i+1];
         piles[i+1]=piles[i];
-        cout<<piles[i]<<" "<<piles[i+1]<<" ";
+        cout<<sec<<" ";
         int second = sec - aliceWins(piles, i+1, j, dp);
         if(i+2<=j){
-            cout<<piles[i+2]<<endl;
             int trd = piles[i+2];
+            cout<<trd;
             piles[i+2]=piles[i+1];
             piles[i+1]=piles[i];
             int third = trd - aliceWins(piles, i+1, j, dp);
