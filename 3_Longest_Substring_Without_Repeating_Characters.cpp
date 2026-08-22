@@ -11,14 +11,12 @@ public:
                     characters[arr[left]]--;
                     if(characters[arr[left]]==0) characters.erase(arr[left]);
                     left++;
-                } while(arr[left]!=arr[right]);
+                } while(arr[left]==arr[right] && left<right);
             } 
             characters[arr[right]]++;
             right++;
         }
-        stringLength = characters.size();
-        maxStringLength = max(maxStringLength, stringLength);
 
-    return maxStringLength;
+        return maxStringLength;
     }
 };
