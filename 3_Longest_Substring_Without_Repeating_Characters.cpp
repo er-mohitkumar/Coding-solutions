@@ -16,6 +16,8 @@ public:
             characters[arr[right]]++;
             right++;
         }
+        stringLength = characters.size();
+        maxStringLength = max(maxStringLength, stringLength);
 
         return maxStringLength;
     }
