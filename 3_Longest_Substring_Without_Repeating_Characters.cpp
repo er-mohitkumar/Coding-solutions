@@ -7,11 +7,15 @@ public:
             if(characters.find(arr[right])!=characters.end()){
                 stringLength = characters.size();
                 maxStringLength = max(maxStringLength, stringLength);
-                do {
+                bool notFound = true;
+                while(notFound){
+                    if(arr[left]==arr[right]){
+                        notFound = false;
+                    }
                     characters[arr[left]]--;
                     if(characters[arr[left]]==0) characters.erase(arr[left]);
                     left++;
-                } while(arr[left]!=arr[right]);
+                }
             } 
             characters[arr[right]]++;
             right++;
