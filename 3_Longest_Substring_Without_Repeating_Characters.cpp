@@ -8,7 +8,7 @@ public:
                 stringLength = characters.size();
                 maxStringLength = max(maxStringLength, stringLength);
                 bool notFound = true;
-                while(notFound){
+                while(notFound && left<right){
                     if(arr[left]==arr[right]){
                         notFound = false;
                     }
